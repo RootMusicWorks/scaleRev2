@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スケール練習アプリ (完全版)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>スケール練習アプリ</h1>
+
+        <!-- お題表示 -->
+        <div id="task">
+            <h2>お題</h2>
+            <p id="scale-display">スケール: -</p>
+            <p id="key-display">キー: -</p>
+            <p id="position-display">スタートポジション: -</p>
+            <p id="phrase-display">フレーズ: -</p>
+            <p id="bpm-display">BPM: -</p>
+            <button id="generate-task">お題を生成</button>
+        </div>
+
+        <!-- 設定欄 -->
+        <div id="settings">
+            <h2>設定</h2>
+
+            <!-- スケール -->
+            <h3>スケール</h3>
+            <div class="three-column">
+                <div class="column">
+                    <h4>ペンタ以外</h4>
+                    <label><input type="checkbox" value="メジャー" checked> メジャー</label>
+                    <label><input type="checkbox" value="マイナー" checked> マイナー</label>
+                    <label><input type="checkbox" value="リディアン" checked> リディアン</label>
+                    <label><input type="checkbox" value="ドリアン" checked> ドリアン</label>
+                    <label><input type="checkbox" value="ミクソリディアン" checked> ミクソリディアン</label>
+                    <label><input type="checkbox" value="メロディックマイナー" checked> メロディックマイナー</label>
+                    <label><input type="checkbox" value="リディアンフラットセブン" checked> リディアンフラットセブン</label>
+                    <label><input type="checkbox" value="オルタード" checked> オルタード</label>
+                    <label><input type="checkbox" value="ロクリアンナチュラルナイン" checked> ロクリアンナチュラルナイン</label>
+                </div>
+                <div class="column">
+                    <h4>ペンタ</h4>
+                    <label><input type="checkbox" value="メジャーペンタ" checked> メジャーペンタ</label>
+                    <label><input type="checkbox" value="マイナーペンタ" checked> マイナーペンタ</label>
+                    <label><input type="checkbox" value="雲井ペンタ" checked> 雲井ペンタ</label>
+                    <label><input type="checkbox" value="m7b5ペンタ" checked> m7b5ペンタ</label>
+                </div>
+                <div class="column">
+                    <h4>その他</h4>
+                    <label><input type="checkbox" value="ディミニッシュ" checked> ディミニッシュ</label>
+                    <label><input type="checkbox" value="コンディミ" checked> コンディミ</label>
+                </div>
+            </div>
+
+            <!-- キー -->
+            <h3>キー</h3>
+            <div class="key-row">
+                <label><input type="checkbox" value="Cb" checked> Cb</label>
+                <label><input type="checkbox" value="C" checked> C</label>
+                <label><input type="checkbox" value="C#" checked> C#</label>
+                <label><input type="checkbox" value="D" checked> D</label>
+                <label><input type="checkbox" value="D#" checked> D#</label>
+                <label><input type="checkbox" value="E" checked> E</label>
+                <label><input type="checkbox" value="F" checked> F</label>
+                <label><input type="checkbox" value="F#" checked> F#</label>
+                <label><input type="checkbox" value="G" checked> G</label>
+                <label><input type="checkbox" value="G#" checked> G#</label>
+                <label><input type="checkbox" value="A" checked> A</label>
+                <label><input type="checkbox" value="A#" checked> A#</label>
+                <label><input type="checkbox" value="B" checked> B</label>
+            </div>
+
+            <!-- スタートポジション -->
+            <h3>スタートポジション</h3>
+            <div class="three-column">
+                <div class="column">
+                    <h4>ペンタ以外</h4>
+                    <label><input type="checkbox" value="6弦人差し指" checked> 6弦人差し指</label>
+                    <label><input type="checkbox" value="6弦中指" checked> 6弦中指</label>
+                    <label><input type="checkbox" value="6弦小指" checked> 6弦小指</label>
+                    <label><input type="checkbox" value="5弦人差し指" checked> 5弦人差し指</label>
+                    <label><input type="checkbox" value="5弦中指" checked> 5弦中指</label>
+                    <label><input type="checkbox" value="5弦小指" checked> 5弦小指</label>
+                </div>
+                <div class="column">
+                    <h4>ペンタ</h4>
+                    <label><input type="checkbox" value="6弦人差し指" checked> 6弦人差し指</label>
+                    <label><input type="checkbox" value="6弦小指" checked> 6弦小指</label>
+                    <label><input type="checkbox" value="5弦人差し指" checked> 5弦人差し指</label>
+                    <label><input type="checkbox" value="5弦小指" checked> 5弦小指</label>
+                </div>
+                <div class="column">
+                    <h4>その他</h4>
+                    <label><input type="checkbox" value="スタート1" checked> スタート1</label>
+                    <label><input type="checkbox" value="スタート2" checked> スタート2</label>
+                </div>
+            </div>
+
+            <!-- フレーズ -->
+            <h3>フレーズ</h3>
+            <div class="three-column">
+                <div class="column">
+                    <h4>ペンタ以外</h4>
+                    <label><input type="checkbox" value="2度インターバル" checked> 2度インターバル</label>
+                    <label><input type="checkbox" value="3度インターバル" checked> 3度インターバル</label>
+                    <label><input type="checkbox" value="4度インターバル" checked> 4度インターバル</label>
+                </div>
+                <div class="column">
+                    <h4>ペンタ</h4>
+                    <label><input type="checkbox" value="フレーズ1" checked> フレーズ1</label>
+                    <label><input type="checkbox" value="フレーズ2" checked> フレーズ2</label>
+                </div>
+                <div class="column">
+                    <h4>その他</h4>
+                    <label><input type="checkbox" value="Lick#1" checked> Lick#1</label>
+                    <label><input type="checkbox" value="Lick#2" checked> Lick#2</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
