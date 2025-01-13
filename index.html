@@ -1,68 +1,64 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スケール練習アプリ (完全版)</title>
+    <title>Scale Practice App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>スケール練習アプリ</h1>
+        <h1>Scale Practice</h1>
 
-        <!-- お題表示 -->
+        <!-- Display Area -->
         <div id="task">
-            <h2>お題</h2>
-            <p id="scale-display">スケール: -</p>
-            <p id="key-display">キー: -</p>
-            <p id="position-display">スタートポジション: -</p>
-            <p id="phrase-display">フレーズ: -</p>
+            <h2>Generated Task</h2>
+            <p id="scale-display">Scale: -</p>
+            <p id="key-display">Key: -</p>
+            <p id="position-display">Position: -</p>
             <p id="bpm-display">BPM: -</p>
-            <button id="generate-task">お題を生成</button>
+            <button id="generate-task">Generate Task</button>
         </div>
 
-        <!-- 設定欄 -->
+        <!-- Settings Area -->
         <div id="settings">
-            <h2>設定</h2>
+            <h2>Settings</h2>
 
-            <!-- スケール -->
-            <h3>スケール</h3>
+            <!-- Scales -->
+            <h3>Scales</h3>
             <div class="three-column">
                 <div class="column">
-                    <h4>ペンタ以外</h4>
-                    <label><input type="checkbox" value="メジャー" checked> メジャー</label>
-                    <label><input type="checkbox" value="マイナー" checked> マイナー</label>
-                    <label><input type="checkbox" value="リディアン" checked> リディアン</label>
-                    <label><input type="checkbox" value="ドリアン" checked> ドリアン</label>
-                    <label><input type="checkbox" value="ミクソリディアン" checked> ミクソリディアン</label>
-                    <label><input type="checkbox" value="メロディックマイナー" checked> メロディックマイナー</label>
+                    <h4>Non-Pent</h4>
+                    <label><input type="checkbox" value="Major" checked> Major</label>
+                    <label><input type="checkbox" value="Minor" checked> Minor</label>
+                    <label><input type="checkbox" value="Lydian" checked> Lydian</label>
                 </div>
                 <div class="column">
-                    <h4>ペンタ</h4>
-                    <label><input type="checkbox" value="メジャーペンタ" checked> メジャーペンタ</label>
-                    <label><input type="checkbox" value="マイナーペンタ" checked> マイナーペンタ</label>
+                    <h4>Pent</h4>
+                    <label><input type="checkbox" value="Maj. Pent." checked> Maj. Pent.</label>
+                    <label><input type="checkbox" value="Min. Pent." checked> Min. Pent.</label>
                 </div>
                 <div class="column">
-                    <h4>その他</h4>
-                    <label><input type="checkbox" value="ディミニッシュ" checked> ディミニッシュ</label>
-                    <label><input type="checkbox" value="コンディミ" checked> コンディミ</label>
+                    <h4>Other</h4>
+                    <label><input type="checkbox" value="Dim." checked> Dim.</label>
+                    <label><input type="checkbox" value="Condim." checked> Condim.</label>
                 </div>
             </div>
 
-            <!-- キー -->
-            <h3>キー</h3>
+            <!-- Keys -->
+            <h3>Keys</h3>
             <div class="key-row">
                 <label><input type="checkbox" value="C" checked> C</label>
                 <label><input type="checkbox" value="D" checked> D</label>
                 <label><input type="checkbox" value="E" checked> E</label>
-                <label><input type="checkbox" value="F" checked> F</label>
-                <label><input type="checkbox" value="G" checked> G</label>
-                <label><input type="checkbox" value="A" checked> A</label>
-                <label><input type="checkbox" value="B" checked> B</label>
             </div>
-        </div>
 
-        <script src="script.js"></script>
+            <!-- BPM -->
+            <h3>BPM</h3>
+            <label>Min BPM: <input type="number" id="bpm-min" value="90"></label>
+            <label>Max BPM: <input type="number" id="bpm-max" value="120"></label>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
