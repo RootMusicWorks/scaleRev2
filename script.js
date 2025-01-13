@@ -17,12 +17,18 @@ function initializeSettings() {
     settings.bpmRange.max = Number(document.getElementById('bpm-max').value);
 }
 
-// お題生成関数
+// お題生成関数 (バグ修正済み)
 function generateTask() {
     initializeSettings();
 
-    if (settings.scales.length === 0 || settings.keys.length === 0 || settings.positions.length === 0 || settings.phrases.length === 0) {
-        alert('すべてのカテゴリで最低1つの項目を選択してください。');
+    const errors = [];
+    if (settings.scales.length === 0) errors.push('スケールを最低1つ選択してください。');
+    if (settings.keys.length === 0) errors.push('キーを最低1つ選択してください。');
+    if (settings.positions.length === 0) errors.push('スタートポジションを最低1つ選択してください。');
+    if (settings.phrases.length === 0) errors.push('フレーズを最低1つ選択してください。');
+
+    if (errors.length > 0) {
+        alert(errors.join('\n'));
         return;
     }
 
